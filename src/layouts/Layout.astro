@@ -21,31 +21,26 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@font-face {
+        font-family: "BebasNeue";
+        src: url('/fonts/BebasNeue-Regular.ttf') format("ttf");
+		font-display: swap;
+    }
+
+	@font-face {
+        font-family: "MontserratAlternates";
+        src: url('/fonts/MontserratAlternates-Regular.ttf') format("ttf");
+		font-display: swap;
+    }
+
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--titleFont: "BebasNeue";
+		--bodyFont: "MontserratAlternates";
+		--fristColor: #F9E217;
+		--secondColor: #000000;
+		--thirdColor: #EFEFEF;
 	}
 	html {
-		font-family: system-ui, sans-serif;
 		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
 	}
 </style>
