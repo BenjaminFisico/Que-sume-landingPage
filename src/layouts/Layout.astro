@@ -39,8 +39,32 @@ const { title } = Astro.props;
 		--fristColor: #F9E217;
 		--secondColor: #000000;
 		--thirdColor: #EFEFEF;
+		--titleSize: 3rem;
+		--bodySize: 1rem;
+		--screenSize: 480px;
 	}
+
+	main{
+		width: var(--screenSize);
+	}
+
 	html {
 		background: #13151a;
+		font-size: 16px;
 	}
+
+	@media only screen and (min-width: 481px) {
+		:root{
+			--screenSize: 768px;
+			--titleSize: 4rem;
+		}
+	}
+
+	@media only screen and (min-width: 769px) {
+		:root{
+			--screenSize: 1200px;
+			--bodySize: 1.5rem;
+		}
+	}
+
 </style>
