@@ -29,11 +29,11 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
         </button>
         <nav class="mobileNav">
             <ul class="navMobileMenu">
-                <li><a>Inicio</a></li>
-                <li><a>Nosotros</a></li>
-                <li><a>Que hacemos</a></li>
-                <li><a>Clientes</a></li>
-                <li><a>Contacto</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#aboutUs">Nosotros</a></li>
+                <li><a href="#">Que hacemos</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </div>
@@ -45,6 +45,11 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
     hamburgerButton?.addEventListener("click", () => {
         navMobileMenu?.classList.toggle("active");
     });
+    navMobileMenu?.childNodes.forEach((child) => {
+        child.addEventListener("click", () => {
+            navMobileMenu?.classList.remove("active");
+        });
+    });
 </script>
 
 
@@ -55,12 +60,16 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
         left: 0;
         right: 0;
         animation: navBarDisplacement linear forwards;
-        animation-timeline: scroll(y);
+        animation-timeline: scroll();
+        animation-range: 0 70vh;
+        z-index: 5;
+        border-bottom: 5px #FFFFFF solid;
     }
 
     .irregularForm{
+        position:absolute;
         width: calc(var(--screenSize) + 50px);
-        margin-bottom: -5px;
+        bottom: 110px;
     }
 
     svg g{
@@ -118,7 +127,7 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
     .mobileNav{
         position: absolute;
         background-color: var(--primaryColor);
-        top: 295px;
+        top: 120px;
         left: 0;
         right: 0;
         height: 0;
@@ -131,23 +140,39 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
         flex-direction: column;
         align-items: center;
         font-size: 1.5rem;
+        padding-inline: 0;
     }
 
     .navMobileMenu > li{
-        padding: 8px;
+        display: flex;
+        width: -webkit-fill-available;
+        text-align: center;
+        border-bottom: 5px solid var(--tertiaryColor);
+    }
+
+    .navMobileMenu > li:first-child{
+        border-top: 5px solid var(--tertiaryColor);
+    }
+
+    .navMobileMenu > li > a{
+        padding-top: 10px;
+        height: 40px;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
     }
 
     .active{
-        height: 250px;
+        height: 304px;
     }
 
     @keyframes navBarDisplacement {
-        0%{ top: 75vh; }
-        20%{ top: -23vh;}
-        100%{ top: -23vh}
+        0%{ top: 95vh; }
+        100%{ top: -40px}
     }
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: 768px) {
         .DesktopNav{
             display: block;
         }
