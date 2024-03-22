@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets"
+import logo  from "/src/assets/ownImages/QUE-SUME-LOGO.svg";
+
+---
+<header>
+    <h1 class="titleWeb">que<b>sume</b></h1>
+    <Image class="logo" src={logo} alt="Logo de que sume más" loading="eager" />
+    <h2 class="subTitle">Inovación y marketing</h2>
+</header>
+
+<style>
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .titleWeb{
+        font-family: var(--bodyFont);
+        font-size: var(--titleSize);
+        margin-block-end: 8px;
+        font-weight: 100;
+    }
+    
+    .titleWeb::after{
+        content: '+';
+        font-weight: bolder;
+    }
+
+    .titleWeb b{
+        font-weight: 900;
+        font-size: calc(var(--titleSize) + 8px);
+    }
+
+    .logo{
+        border-radius: 60px;
+        box-shadow: 4px 4px 25px 0 rgba(0, 0, 0, 0.25), -4px -4px 25px 0 rgba(0, 0, 0, 0.25);
+        width: 200px;
+        height: 200px;
+    }
+
+    .subTitle{
+        font-size: calc(var(--bodySize) * 2);
+    }
+</style>

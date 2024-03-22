@@ -1,0 +1,160 @@
+---
+import { Image } from "astro:assets";
+import hamburgerIcon from "/src/assets/hamburger_button.svg";
+---
+<div class="HeaderContainer">
+    <svg class="irregularForm" version="1.0" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 1024.000000 342.000000"
+    preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0.000000,342.000000) scale(0.100000,-0.100000)">
+            <path d="M10020 3268 c-118 -66 -381 -218 -585 -338 -914 -537 -1126 -658
+            -1468 -837 -876 -457 -1644 -708 -2462 -804 -147 -18 -605 -18 -765 -1 -181
+            20 -522 74 -855 137 -800 151 -1080 182 -1482 164 -318 -14 -540 -54 -818
+            -149 -566 -193 -1164 -522 -1518 -835 l-67 -59 0 -273 0 -273 5120 0 5120 0 0
+            1695 c0 932 -1 1695 -2 1695 -2 -1 -100 -55 -218 -122z"/>
+        </g>
+    </svg>
+    <div class="navBarContainer">
+        <h3 class="navLogo">que<b>sume</b></h3>
+        <nav class="DesktopNav">
+            <ul class="navMenu">
+                <li><a>Inicio</a></li>
+                <li><a>Nosotros</a></li>
+                <li><a>Que hacemos</a></li>
+                <li><a>Clientes</a></li>
+                <li><a>Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="hamburgerButton">
+            <Image src={hamburgerIcon} alt="Hamburger Icon" loading="eager" width={40} height={40}/>
+        </button>
+        <nav class="mobileNav">
+            <ul class="navMobileMenu">
+                <li><a>Inicio</a></li>
+                <li><a>Nosotros</a></li>
+                <li><a>Que hacemos</a></li>
+                <li><a>Clientes</a></li>
+                <li><a>Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script>
+    const hamburgerButton = document.querySelector(".hamburgerButton");
+    const navMobileMenu = document.querySelector(".mobileNav");
+    hamburgerButton?.addEventListener("click", () => {
+        navMobileMenu?.classList.toggle("active");
+    });
+</script>
+
+
+<style>
+    .HeaderContainer{
+        position: fixed;
+        top: 100vh;
+        left: 0;
+        right: 0;
+        animation: navBarDisplacement linear forwards;
+        animation-timeline: scroll(y);
+    }
+
+    .irregularForm{
+        width: calc(var(--screenSize) + 50px);
+        margin-bottom: -5px;
+    }
+
+    svg g{
+        fill: var(--primaryColor);
+    }
+
+    .navBarContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primaryColor);
+    }
+
+    .navLogo{
+        font-family: var(--bodyFont);
+        font-size: 3rem;
+        font-weight: 100;
+        margin-block-end: 8px;
+    }
+
+    .navLogo > b{
+        font-weight: 900;
+        font-size: 3.5rem;
+    }
+
+    .DesktopNav{
+        display: none;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    .navMenu{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .hamburgerButton{
+        display: block;
+        border-radius: 50%;
+        border: 0;
+        background: transparent;
+        width: 60px;
+        height: 60px;
+        margin-top: 48px;
+        margin-right: 16px;
+        transition: background 200ms linear;
+    }
+
+    .hamburgerButton:hover {
+        background-color: #FFFFFF;
+    }
+
+    .mobileNav{
+        position: absolute;
+        background-color: var(--primaryColor);
+        top: 295px;
+        left: 0;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 200ms ease-out;
+    }
+
+    .navMobileMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    .navMobileMenu > li{
+        padding: 8px;
+    }
+
+    .active{
+        height: 250px;
+    }
+
+    @keyframes navBarDisplacement {
+        0%{ top: 75vh; }
+        20%{ top: -23vh;}
+        100%{ top: -23vh}
+    }
+
+    @media only screen and (min-width: 481px) {
+        .DesktopNav{
+            display: block;
+        }
+
+        .hamburgerButton{
+            display: none;
+        }
+    }
+
+</style>
