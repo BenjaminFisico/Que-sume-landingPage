@@ -31,7 +31,7 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
             <ul class="navMobileMenu">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#aboutUs">Nosotros</a></li>
-                <li><a href="#">Que hacemos</a></li>
+                <li><a href="#services">Que hacemos</a></li>
                 <li><a href="#">Clientes</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
@@ -93,6 +93,15 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
     .navLogo > b{
         font-weight: 900;
         font-size: 3.5rem;
+    }
+
+    .navLogo::after{
+        content: '+';
+        font-weight: 900;
+        font-size: 3.5rem;
+        position: relative;
+        top: -16px;
+        right: 8px;
     }
 
     .DesktopNav{
