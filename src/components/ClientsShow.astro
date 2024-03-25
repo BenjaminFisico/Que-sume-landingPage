@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets"
+import client1 from '/src/assets/clientsLogos/LS.webp';
+import client2 from '/src/assets/clientsLogos/3_de_campo_.webp';
+import client3 from '/src/assets/clientsLogos/Aberturas_renacer.webp';
+import client4 from '/src/assets/clientsLogos/Acinmetal.webp';
+import client5 from '/src/assets/clientsLogos/Aires_de_bragado.webp';
+import client6 from '/src/assets/clientsLogos/Alternativa_sport.webp';
+---
+
+<div class="clientsContainer">
+    <div class="clientsSlider">
+        <div class="firstPart">
+            <Image src={client1} alt="Client logo" loading="lazy"/>
+            <Image src={client2} alt="Client logo" loading="lazy"/>
+            <Image src={client3} alt="Client logo" loading="lazy"/>
+            <Image src={client4} alt="Client logo" loading="lazy"/>
+            <Image src={client5} alt="Client logo" loading="lazy"/>
+            <Image src={client6} alt="Client logo" loading="lazy"/>
+        </div>
+        <div class="secondPart">
+            <Image src={client1} alt="Client logo" loading="lazy"/>
+            <Image src={client2} alt="Client logo" loading="lazy"/>
+            <Image src={client3} alt="Client logo" loading="lazy"/>
+            <Image src={client4} alt="Client logo" loading="lazy"/>
+            <Image src={client5} alt="Client logo" loading="lazy"/>
+            <Image src={client6} alt="Client logo" loading="lazy"/>
+        </div>
+    </div>
+    <div class="clientsSlider">
+        <div class="firstPart">
+            <Image src={client1} alt="Client logo" loading="lazy"/>
+            <Image src={client2} alt="Client logo" loading="lazy"/>
+            <Image src={client3} alt="Client logo" loading="lazy"/>
+            <Image src={client4} alt="Client logo" loading="lazy"/>
+            <Image src={client5} alt="Client logo" loading="lazy"/>
+            <Image src={client6} alt="Client logo" loading="lazy"/>
+        </div>
+        <div class="secondPart">
+            <Image src={client1} alt="Client logo" loading="lazy"/>
+            <Image src={client2} alt="Client logo" loading="lazy"/>
+            <Image src={client3} alt="Client logo" loading="lazy"/>
+            <Image src={client4} alt="Client logo" loading="lazy"/>
+            <Image src={client5} alt="Client logo" loading="lazy"/>
+            <Image src={client6} alt="Client logo" loading="lazy"/>
+        </div>
+    </div>
+    <div class="clientsSlider">
+        <div class="firstPart">
+            <Image src={client1} alt="Client logo" loading="lazy"/>
+            <Image src={client2} alt="Client logo" loading="lazy"/>
+            <Image src={client3} alt="Client logo" loading="lazy"/>
+            <Image src={client4} alt="Client logo" loading="lazy"/>
+            <Image src={client5} alt="Client logo" loading="lazy"/>
+            <Image src={client6} alt="Client logo" loading="lazy"/>
+        </div>
+        <div class="secondPart">
+            <Image src={client1} alt="Client logo" loading="lazy"/>
+            <Image src={client2} alt="Client logo" loading="lazy"/>
+            <Image src={client3} alt="Client logo" loading="lazy"/>
+            <Image src={client4} alt="Client logo" loading="lazy"/>
+            <Image src={client5} alt="Client logo" loading="lazy"/>
+            <Image src={client6} alt="Client logo" loading="lazy"/>
+        </div>
+    </div>
+</div>
+
+<style>
+    .clientsContainer{
+        overflow: hidden;
+    }
+
+    .clientsSlider{
+        display: flex;
+        overflow-x: scroll;
+    }
+
+    .clientsSlider div{
+        position: relative;
+        display: flex;
+    }
+    
+    .clientsSlider img{
+        position: relative;
+        border: 1px solid #00000025;
+        width: 125px;
+        height: auto;
+        margin: 8px;
+    }
+
+</style>
