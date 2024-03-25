@@ -1,13 +1,163 @@
 ---
+import { Image } from "astro:assets"
+import facebookIcon from '/src/assets/facebook_icon.svg';
+import instagramIcon from '/src/assets/instagram_icon.svg';
+import instagramImage from '/src/assets/ownImages/queSumeMasInstagram.jpg';
 ---
 
 <article id="contact">
-    <h3>contactanos</h3>
-    <p>¡Es momento de tener tu sitio online!</p>
+    <video id="videoCel" src="/src/assets/videos/videoCelular.mp4" autoplay loop muted controls></video>
+    <h3 class="title">contactanos</h3>
+    <p class="subtitleText">¡Es momento de tener tu sitio online!</p>
+    <h4 class="title minTitle">¿ En que podemos ayudarte?</h4>
+    <ul>
+        <li>Diseño</li>
+        <li>Desarrollo</li>
+        <li>Puesta en marcha</li>
+        <li>Fotografia</li>
+        <li>Marketing online</li>
+    </ul>
+    <h4 class="title minTitle">¿ Listo para hacer crecer tu marca?</h4>
+    <p class="contactEmail">info@quesume.com.ar</p>
+    <div class="socialMediaContainer">
+        <a href="https://www.facebook.com/Que-Sume-102645215550641" target="_blank" id="facebook">
+            <Image class="icon" src={facebookIcon} alt="Facebook Icon" loading="lazy"/>
+        </a>
+        <a href="https://www.instagram.com/quesumemas/?igshid=ZDYzZTNjNWY%3D" target="_blank" id="instagram">
+            <Image class="icon" src={instagramIcon} alt="Instagram Icon" loading="lazy"/>
+            <div class="imgHoverEffect">
+                <div class="borderEffect"></div>
+                <Image src={instagramImage} alt="Instagram Image" loading="lazy"/>
+            </div>
+        </a>
+    </div>
 </article>
 
 <style>
     #contact{
         background-color: black;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+    #videoCel{
+        width: 80%;
+    }
+
+    h3, h4, p, li {
+        color: var(--backgroundColor);
+    }
+
+    .minTitle{
+        font-size: calc(var(--titleSize) - 8px);
+        margin-top: 32px;
+    }
+
+    li{
+        font-size: var(--bodySize);
+        font-family: var(--bodyFont);
+    }
+
+    .contactEmail{
+        font-family: var(--bodyFont);
+        font-size: 2rem;
+        text-align: center;
+        color: black;
+        background-color: var(--primaryColor);
+    }
+
+    .socialMediaContainer{
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: var(--primaryColor);
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        color: var(--backgroundColor);
+        transition: width 200ms ease-out, height 200ms ease-out;
+    }
+
+    a > .icon{
+        width: 40px;
+        height: 40px;
+        transition: width 200ms ease-out, height 200ms ease-out;
+    }
+
+    a:hover{
+        width: 140px;
+        height: 140px;
+    }
+
+    a:hover > .icon{
+        width: 0;
+        height: 0;
+    }
+
+    .imgHoverEffect{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-radius: 100%;
+        overflow: hidden;
+        background-color: var(--primaryColor);
+    }
+
+    .imgHoverEffect::before{
+        content: "";
+        position: absolute;
+        width: 85px;
+        height: 85px;
+        border-radius: 100%;
+        background-color: black;
+        top: 40px;
+        left: 40px;
+        animation: rotateEffect 1s linear infinite;
+    }
+
+    @keyframes rotateEffect {
+        0%{
+            transform: translateX(0%) translateY(0%);
+        }
+        25%{
+            transform: translateX(-50%) translateY(0%);
+        }
+        50%{
+            transform: translateX(-50%) translateY(-50%);
+        }
+        75%{
+            transform: translateX(0%) translateY(-50%);
+        }
+        100%{
+            transform: translateX(0%) translateY(0%);
+        }
+    }
+
+    .imgHoverEffect > img{
+        height: 113px;
+        width: 113px;
+        border-radius: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    a:hover > .imgHoverEffect{
+        width: 115px;
+        height: 115px;
+    }
+
+
+
 </style>
