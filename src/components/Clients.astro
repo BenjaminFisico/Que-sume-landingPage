@@ -1,8 +1,95 @@
 ---
+import { Image } from "astro:assets"
+import presentationImage from '/src/assets/ownImages/ambient_image.webp';
+import logo from '/src/assets/ownImages/QUE-SUME-LOGO.svg';
+import ClientsShow from "./ClientsShow.astro";
 ---
 
 <article id="clients">
-    <h3 class="">¿por qué nos eligen?</h3>
-    <h3>Nuestros clientes</h3>
-    <p>confian en nuestro trabajo</p>
+    <header>
+        <div class="imageContainer">
+            <Image src={presentationImage} alt="Clients presentation" loading="lazy"/>
+        </div>
+        <Image class="logo" src={logo} alt="Clients Logo" loading="lazy"/>
+        <h3 class="doubleTitle">¿por qué nos eligen?</h3>
+        <h3>¿por qué nos eligen?</h3>
+        <div class="descsContainer">
+            <div class="section">
+                <p>🢂 Ofrecemos un servicio integral abarcando todos los aspectos necesarios para hacer funcionar cualquier negocio.</p>
+                <p>🢂 Aprovechamos al máximo la inmediatez del marketing digital y con la mezcla del potencial del marketing tradicional.</p>
+                <p>🢂 Ofrecemos un servicio completo y profesional llevándolo a una metodología simple y clara que incrementa el éxito de tu empresa.</p>
+                <p>🢂 Nuestro principal objetivo es posicionar la marca, incrementar su visibilidad para llegar a nuevos clientes sin descuidar el engagement con la comunidad creada.</p>
+            </div>
+            <div class="section">
+                <p>🢂 Contamos con una estructura multidisciplinaria que nos permite la especialización en distintas áreas</p>
+                <p>🢂 Tenemos profesionales en diseño, programación, publicidad, social media, entre otros.</p>
+                <p>🢂 Ofrecemos el servicio de Community y Performance completo, combinando creatividad y contenido de calidad.</p>
+                <p>🢂 Promovemos un intercambio ideológico constante que aporta valor agregado a nuestro proceso creativo, desarrollando conceptos y estrategias impactantes y efectivas.</p>
+            </div>
+        </div>
+    </header>
+    <h3 class="title">Nuestros clientes</h3>
+    <p class="subtitleText">confian en nuestro trabajo</p>
+    <ClientsShow />
 </article>
+
+<style>
+    #clients{
+        margin-bottom: 32px;
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imageContainer{
+        overflow: hidden;
+        height: 250px;
+        width: 480px;
+    }
+
+    .imageContainer img{
+        position: relative;
+        bottom: 310px;
+        right: 140px;
+        width: 620px;
+        opacity: 0.8;
+    }
+
+    .logo{
+        width: 200px;
+        height: auto;
+    }
+
+    .doubleTitle, .doubleTitle + h3{
+        font-family: var(--titleFont);
+        font-size: var(--titleSize);
+        margin-block: 0;
+    }
+
+    .doubleTitle + h3{
+        position: relative;
+        bottom: 65px;
+        right: 3px;
+        color: transparent;
+        -webkit-text-stroke: 1px black;
+    }
+
+    .descsContainer{
+        display: flex;
+        margin-left: 16px;
+        margin-right: 16px;
+        gap: 16px;
+        margin-top: -48px;
+    }
+
+    .section{
+        background-color: var(--tertiaryColor);
+    }
+
+    .section p{
+        margin: 16px 8px;
+    }
+</style>
