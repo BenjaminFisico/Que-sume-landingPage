@@ -2,7 +2,8 @@
 import { Image } from "astro:assets"
 import facebookIcon from '/src/assets/facebook_icon.svg';
 import instagramIcon from '/src/assets/instagram_icon.svg';
-import instagramImage from '/src/assets/ownImages/queSumeMasInstagram.jpg';
+import redirectIcon from '/src/assets/ownImages/redirect_icon.svg';
+import ContactModal from './ContactModal.astro';
 ---
 
 <article id="contact">
@@ -22,14 +23,17 @@ import instagramImage from '/src/assets/ownImages/queSumeMasInstagram.jpg';
     <div class="socialMediaContainer">
         <a href="https://www.facebook.com/Que-Sume-102645215550641" target="_blank" id="facebook">
             <Image class="icon" src={facebookIcon} alt="Facebook Icon" loading="lazy"/>
+            <Image class="redirectIcon" src={redirectIcon} alt="Icono de redireccionamiento" loading="lazy"/>
+            <h4 class="title minTitle">Facebook</h4>
         </a>
         <a href="https://www.instagram.com/quesumemas/?igshid=ZDYzZTNjNWY%3D" target="_blank" id="instagram">
+            <Image class="redirectIcon" src={redirectIcon} alt="Icono de redireccionamiento" loading="lazy"/>
             <Image class="icon" src={instagramIcon} alt="Instagram Icon" loading="lazy"/>
-            <div class="imgHoverEffect">
-                <div class="borderEffect"></div>
-                <Image src={instagramImage} alt="Instagram Image" loading="lazy"/>
-            </div>
+            <h4 class="title minTitle">Instagram</h4>
         </a>
+    </div>
+    <div class="emailMessageContainer">
+        <ContactModal />
     </div>
 </article>
 
@@ -51,7 +55,7 @@ import instagramImage from '/src/assets/ownImages/queSumeMasInstagram.jpg';
     }
 
     .minTitle{
-        font-size: calc(var(--titleSize) - 8px);
+        font-size: calc(var(--titleSize) - 12px);
         margin-top: 32px;
     }
 
@@ -84,80 +88,31 @@ import instagramImage from '/src/assets/ownImages/queSumeMasInstagram.jpg';
         height: 70px;
         border-radius: 100%;
         color: var(--backgroundColor);
-        transition: width 200ms ease-out, height 200ms ease-out;
     }
 
     a > .icon{
         width: 40px;
         height: 40px;
-        transition: width 200ms ease-out, height 200ms ease-out;
     }
 
-    a:hover{
-        width: 140px;
-        height: 140px;
-    }
-
-    a:hover > .icon{
-        width: 0;
-        height: 0;
-    }
-
-    .imgHoverEffect{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 0;
-        height: 0;
+    a > .redirectIcon{
         position: absolute;
-        border-radius: 100%;
-        overflow: hidden;
-        background-color: var(--primaryColor);
+        margin-left: 85px;
+        margin-top: 50px;
+        transition: transform 200ms ease-out;
     }
 
-    .imgHoverEffect::before{
-        content: "";
+    a:hover > .redirectIcon{
+        transform: scale(1.4);
+    }
+
+    a > h4{
         position: absolute;
-        width: 85px;
-        height: 85px;
-        border-radius: 100%;
-        background-color: black;
-        top: 40px;
-        left: 40px;
-        animation: rotateEffect 1s linear infinite;
+        margin-top: 108px;
     }
 
-    @keyframes rotateEffect {
-        0%{
-            transform: translateX(0%) translateY(0%);
-        }
-        25%{
-            transform: translateX(-50%) translateY(0%);
-        }
-        50%{
-            transform: translateX(-50%) translateY(-50%);
-        }
-        75%{
-            transform: translateX(0%) translateY(-50%);
-        }
-        100%{
-            transform: translateX(0%) translateY(0%);
-        }
+    .emailMessageContainer{
+        margin-top: 96px;
+        margin-right: auto;
     }
-
-    .imgHoverEffect > img{
-        height: 113px;
-        width: 113px;
-        border-radius: 100%;
-        position: absolute;
-        z-index: 3;
-    }
-
-    a:hover > .imgHoverEffect{
-        width: 115px;
-        height: 115px;
-    }
-
-
-
 </style>

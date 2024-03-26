@@ -1,0 +1,99 @@
+---
+---
+
+<div class="contactModal">
+    <h4 class="title">Enviar mensaje ➚</h4>
+    <form id="emailForm">
+        <fieldset>
+            <input id="nameInput" type="text" class="simpleInput" required/>
+            <label for="nameInput">Nombre</label>
+            <input id="emailInput" type="text" class="simpleInput" required/>
+            <label for="emailInput">Email</label>
+            <input id="affairInput" type="text" class="simpleInput" required/>
+            <label for="affairInput">Asunto</label>
+            <textarea id="messageInput" class="simpleInput textAreaHeight" required></textarea>
+            <label for="messageInput">Mensaje</label>
+        </fieldset>
+        <button type="submit" class="sendButton">Enviar</button>
+    </form> 
+</div>
+
+<style>
+     h4, p{
+        color: var(--backgroundColor);
+    }
+
+    .contactModal{
+        position: absolute;
+        background-color: black;
+        border-radius: 20px;
+        border-top: 5px solid var(--primaryColor);
+        margin-top: -40px;
+        width: 85%;
+        height: 55px;
+        overflow: hidden;
+        transition: height 200ms ease-out, transform 200ms ease-out;
+    }
+
+    .contactModal:hover{
+        transform: translateY(-550px);
+        height: 550px;
+        border-bottom: 5px solid var(--primaryColor);
+    }
+
+    #emailForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    fieldset{
+        border: 0;
+    }
+
+    .simpleInput{
+        border-radius: 15px;
+        border: 0;
+        font-size: 1.2rem;
+        height: 28px;
+        padding-left: 8px;
+        margin: 16px 16px 0 16px;
+        width: -webkit-fill-available;
+        box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.50);
+    }
+
+    .simpleInput + label{
+        position: relative;
+        bottom: 28px;
+        left: 28px;
+        font-size: 1.2rem;
+        color: #676767;
+        transition: bottom 200ms ease-out, font-size 200ms ease-out;
+    }
+
+    .simpleInput:focus + label, .simpleInput:valid + label{
+        color: var(--backgroundColor);
+        font-size: 1rem;
+        bottom: 50px;
+    }
+
+    .textAreaHeight{
+        height: 150px;
+    }
+
+    .textAreaHeight + label{
+        bottom: 155px;
+    }
+
+    .textAreaHeight:focus + label, .textAreaHeight:valid + label{
+        bottom: 178px;
+    }
+
+    .sendButton{
+        border-radius: 15px;
+        font-family: var(--titleFont);
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+
+</style>
