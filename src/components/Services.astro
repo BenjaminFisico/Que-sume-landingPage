@@ -12,6 +12,7 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
     <h2 class="title servicesText">servicios</h2>
     <p class="subtitleText servicesText">nos centramos en escuchar detenidamente las necesidades de cada cliente, armar un plan estratégico a medida y trabajar para lograr los mejores resultados.</p>
     <div class="servicesContainer">
+        <div class="backgroundDetail rotateCounterClockwise"></div>
         <div class="service toRight">
             <h2 class="title servicesText textLeft">Branding</h2>
             <p class="subtitleText textLeft servicesText">Te ayudamos a crear el <mark>universo visual</mark> de tu marca con el objetivo de <mark>conquistar la mente y el  corazón del consumidor.</mark></p>
@@ -22,6 +23,7 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             <p class="subtitleText servicesText"><mark>Tu tiempo es muy valioso,</mark> nos encargamos de todas tus redes. <mark>¿estas listo para hacer crecer tu marca?</mark></p>
             <Image id="communityIcon" class="sectionIcon" src={communityIcon} alt="Community manager Icon" loading="lazy"/>
         </div>
+        <div class="backgroundDetail rotateClockwise"></div>
         <div class="service toRight">
             <h2 class="title servicesText textLeft advertisements">Anuncios</h2>
             <p class="subtitleText textLeft servicesText">Incrementemos juntos <mark>la visibilidad y el engagement.</mark></p>
@@ -43,6 +45,7 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             <p class="subtitleText textLeft servicesText"><mark>Te asesoramos y guiamos para</mark> destrabar eso que “no sabés qué es” y hará <mark>que tu marca despegue.</mark></p>
             <Image id="consultancyIcon" class="sectionIcon" src={consultancyIcon} alt="Consultoria Icon" loading="lazy"/>
         </div>
+        <div class="backgroundDetail rotateCounterClockwise"></div>
     </div>
 </article>
 
@@ -132,6 +135,23 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
         width: 200px;
         bottom: 220px;
         left: 330px;
+    }
+
+    .backgroundDetail{
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-bottom: 15px dashed var(--backgroundColor);
+        opacity: 0.25;
+        margin-bottom: -45px;
+    }
+
+    .rotateClockwise{
+        rotate: 10deg;
+    }
+
+    .rotateCounterClockwise{
+        rotate: -10deg;
     }
 
 </style>
