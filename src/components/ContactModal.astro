@@ -1,9 +1,11 @@
 ---
 ---
-
 <div class="contactModal">
-    <h4 class="title">Enviar mensaje ➚</h4>
     <form id="emailForm">
+        <div class="flex">
+            <button type="button" class="openModal title">Enviar Mensaje</button>
+            <p class="title">🢃</p>
+        </div>
         <fieldset>
             <input id="nameInput" type="text" class="simpleInput" required/>
             <label for="nameInput">Nombre</label>
@@ -17,6 +19,18 @@
         <button type="submit" class="sendButton">Enviar</button>
     </form> 
 </div>
+
+<script>
+    function initContactModalBehavior() {
+        const contactButton = document.querySelector(".openModal");
+        contactButton?.addEventListener("click", () => {
+        const contactModal = document.querySelector(".contactModal");
+        contactModal?.classList.toggle("showModal"); 
+        });   
+    }
+
+    initContactModalBehavior();
+</script>
 
 <style>
      h4, p{
@@ -35,10 +49,26 @@
         transition: height 200ms ease-out, transform 200ms ease-out;
     }
 
-    .contactModal:hover{
+    .openModal{
+        background: transparent;
+        width: 100%;
+        color: white;
+        border: 0;
+    }
+
+   .showModal{
         transform: translateY(-550px);
         height: 550px;
         border-bottom: 5px solid var(--primaryColor);
+    }
+
+    .showModal p{
+        transition: transform 1s ease-in-out;
+        transform: rotate(180deg);
+    }
+
+    .flex{
+        display: flex;
     }
 
     #emailForm{
@@ -49,6 +79,7 @@
 
     fieldset{
         border: 0;
+        text-align: start;
     }
 
     .simpleInput{
