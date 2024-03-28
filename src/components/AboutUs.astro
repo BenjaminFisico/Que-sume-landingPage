@@ -13,12 +13,28 @@ Con el fin de posicionarlas y
 <mark>generar mayor visibilidad</mark>.</pre></h3>
     <div class="backgroundElipse"></div>
     <div class="videoContainer">
-        <button class="videoButton">
+        <button id="playButton" class="videoButton">
             <p class="videoText">Conocenos mejor</p>
             <Image src={playIcon} alt="Play Icon" loading="eager" width={80} height={80}/>
-        </button>    
+        </button>
     </div> 
+    <video id="presentationVideo" controls>
+        <source src="/src/assets/videos/landing_enero24.mp4" type="video/mp4">
+        Tu navegador no soporta el video
+    </video>  
 </article>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var video :HTMLVideoElement = document.getElementById('presentationVideo') as HTMLVideoElement;
+        var playButton :HTMLButtonElement = document.getElementById('playButton') as HTMLButtonElement;
+        playButton.addEventListener('click', function () {
+            video.play();
+            video.style.width = '100%';
+            playButton.style.display = 'none';
+        });
+    });
+</script>
 
 <style>
     #aboutUs{
@@ -74,4 +90,10 @@ Con el fin de posicionarlas y
         font-size: 1.2rem;
         font-weight: bold;
     }
+
+    #presentationVideo{
+        width: 0;
+        transition: width 500ms ease-in-out;
+    }
+
 </style>
