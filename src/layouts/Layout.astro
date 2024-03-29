@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -42,7 +42,6 @@ const { title } = Astro.props;
 		--backgroundColor: #FFFFFF;
 		--titleSize: 3rem;
 		--bodySize: 1rem;
-		--screenSize: 480px;
 		scroll-behavior: smooth;
 	}
 
@@ -51,7 +50,7 @@ const { title } = Astro.props;
 	}
 
 	main{
-		width: var(--screenSize);
+		width: 100%;
 		font-family: var(--body-Font);
 	}
 
@@ -80,7 +79,6 @@ const { title } = Astro.props;
 
 	@media only screen and (min-width: 481px) {
 		:root{
-			--screenSize: 768px;
 			--titleSize: 4rem;
 			--bodySize: 1.5rem;
 		}
@@ -88,7 +86,6 @@ const { title } = Astro.props;
 
 	@media only screen and (min-width: 769px) {
 		:root{
-			--screenSize: 1200px;
 			--bodySize: 1.5rem;
 		}
 	}

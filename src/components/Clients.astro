@@ -47,14 +47,14 @@ import ClientsShow from "./ClientsShow.astro";
     .imageContainer{
         overflow: hidden;
         height: 250px;
-        width: 480px;
+        width: 100%;
     }
 
     .imageContainer img{
         position: relative;
         bottom: 310px;
         right: 140px;
-        width: 620px;
+        width: 520px;
         opacity: 0.8;
     }
 
@@ -90,6 +90,18 @@ import ClientsShow from "./ClientsShow.astro";
     }
 
     .section p{
+        font-size: var(--bodySize);
         margin: 16px 8px;
+    }
+
+    @media only screen and (min-width: 481px) {
+        .imageContainer{
+            height: 350px;
+        }
+
+        .imageContainer img{
+            width: 720px;
+            right: 0;
+        }
     }
 </style>

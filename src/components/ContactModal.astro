@@ -21,15 +21,13 @@
 </div>
 
 <script>
-    function initContactModalBehavior() {
+    document.addEventListener('DOMContentLoaded', function () {
         const contactButton = document.querySelector(".openModal");
         contactButton?.addEventListener("click", () => {
         const contactModal = document.querySelector(".contactModal");
         contactModal?.classList.toggle("showModal"); 
         });   
-    }
-
-    initContactModalBehavior();
+    });
 </script>
 
 <style>
