@@ -14,35 +14,47 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
     <div class="servicesContainer">
         <div class="backgroundDetail rotateCounterClockwise"></div>
         <div class="service toRight">
-            <h2 class="title servicesText textLeft">Branding</h2>
-            <p class="subtitleText textLeft servicesText">Te ayudamos a crear el <mark>universo visual</mark> de tu marca con el objetivo de <mark>conquistar la mente y el  corazón del consumidor.</mark></p>
             <Image id="brandingIcon" class="sectionIcon" src={brandingIcon} alt="Branding Icon" loading="lazy"/>
+            <div class="text">
+                <h2 class="title servicesText textLeft">Branding</h2>
+                <p class="subtitleText textLeft servicesText">Te ayudamos a crear el <mark>universo visual</mark> de tu marca con el objetivo de <mark>conquistar la mente y el  corazón del consumidor.</mark></p>
+            </div>
         </div>
         <div class="service">
-            <h2 class="title servicesText textRight">Community manager</h2>
-            <p class="subtitleText servicesText"><mark>Tu tiempo es muy valioso,</mark> nos encargamos de todas tus redes. <mark>¿estas listo para hacer crecer tu marca?</mark></p>
+            <div class="text">
+                <h2 class="title servicesText textRight">Community manager</h2>
+                <p class="subtitleText servicesText"><mark>Tu tiempo es muy valioso,</mark> nos encargamos de todas tus redes. <mark>¿estas listo para hacer crecer tu marca?</mark></p>
+            </div>
             <Image id="communityIcon" class="sectionIcon" src={communityIcon} alt="Community manager Icon" loading="lazy"/>
         </div>
         <div class="backgroundDetail rotateClockwise"></div>
         <div class="service toRight">
-            <h2 class="title servicesText textLeft advertisements">Anuncios</h2>
-            <p class="subtitleText textLeft servicesText">Incrementemos juntos <mark>la visibilidad y el engagement.</mark></p>
-            <p class="subtitleText textLeft servicesText">Encontremos la <mark>audiencia adecuada</mark> para llegar a <mark>clientes relevantes.</mark></p>
             <Image id="advertisementsIcon" class="sectionIcon" src={advertisementsIcon} alt="Anuncios Icon" loading="lazy"/>
+            <div class="text">
+                <h2 class="title servicesText textLeft advertisements">Anuncios</h2>
+                <p class="subtitleText textLeft servicesText">Incrementemos juntos <mark>la visibilidad y el engagement.</mark></p>
+                <p class="subtitleText textLeft servicesText">Encontremos la <mark>audiencia adecuada</mark> para llegar a <mark>clientes relevantes.</mark></p>
+            </div>
         </div>
         <div class="service">
-            <h2 class="title servicesText">Web | E-Commerce</h2>
-            <p class="subtitleText servicesText">La web es tu vidriera en el mundo online, <mark>ideamos el plan perfecto para vos</mark></p>
+            <div class="text">
+                <h2 class="title servicesText">Web | E-Commerce</h2>
+                <p class="subtitleText servicesText">La web es tu vidriera en el mundo online, <mark>ideamos el plan perfecto para vos</mark></p>
+            </div>
             <Image id="ECommerceIcon" class="sectionIcon" src={ECommerceIcon} alt="E-Commerce Icon" loading="lazy"/>
         </div>
         <div class="service toRight">
-            <h2 class="title servicesText">Producciones</h2>
-            <p class="subtitleText textRight servicesText">Combinamos <mark>creatividad y contenido de calidad</mark> para mostrar todo el potencial que tiene tu proyecto</p>
             <Image id="productiosIcon" class="sectionIcon" src={productiosIcon} alt="Producciones Icon" loading="lazy"/>
+            <div class="text">
+                <h2 class="title servicesText">Producciones</h2>
+                <p class="subtitleText textRight servicesText">Combinamos <mark>creatividad y contenido de calidad</mark> para mostrar todo el potencial que tiene tu proyecto</p>
+            </div>
         </div>
         <div class="service">
-            <h2 class="title servicesText textLeft">Consultoria</h2>
-            <p class="subtitleText textLeft servicesText"><mark>Te asesoramos y guiamos para</mark> destrabar eso que “no sabés qué es” y hará <mark>que tu marca despegue.</mark></p>
+            <div class="text">
+                <h2 class="title servicesText textLeft">Consultoria</h2>
+                <p class="subtitleText textLeft servicesText"><mark>Te asesoramos y guiamos para</mark> destrabar eso que “no sabés qué es” y hará <mark>que tu marca despegue.</mark></p>
+            </div>
             <Image id="consultancyIcon" class="sectionIcon" src={consultancyIcon} alt="Consultoria Icon" loading="lazy"/>
         </div>
         <div class="backgroundDetail rotateCounterClockwise"></div>
@@ -60,14 +72,22 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
     }
 
     .servicesContainer{
-        padding: 75px 0 30px 0;
+        padding-bottom: 30px;
     }
 
     .service{
+        display: flex;
         margin: 32px 0;
-        border-bottom: 5px dashed var(--backgroundColor);
         width: 85%;
         margin-right: 8px;
+    }
+
+    .text{
+        border-bottom: 5px dashed var(--backgroundColor);
+    }
+
+    .text p{
+        margin-bottom: 32px;
     }
 
     .textLeft{
@@ -91,7 +111,6 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
     .sectionIcon{
         position: relative;
         height: auto;
-        margin-bottom: -300px;
         opacity: 1;
         animation: fade-in linear;
     }
@@ -99,42 +118,6 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
     @keyframes fade-in {
         0%{ opacity: 0;}
         100%{ opacity: 1;}
-    }
-
-    #brandingIcon{
-        width: 300px;
-        left: -265px;
-        bottom: 220px;
-    }
-
-    #communityIcon{
-       width: 150px;
-       left: 405px;
-       bottom: 265px;
-    }
-
-    #advertisementsIcon{
-        width: 175px;
-        left: -100px;
-        bottom: 300px;
-    }
-
-    #ECommerceIcon{
-        width: 175px;
-        bottom: 255px;
-        left: 375px;
-    }
-
-    #productiosIcon{
-        width: 175px;
-        bottom: 280px;
-        left: -135px;
-    }
-
-    #consultancyIcon{
-        width: 200px;
-        bottom: 220px;
-        left: 330px;
     }
 
     .backgroundDetail{
@@ -152,6 +135,30 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
 
     .rotateCounterClockwise{
         rotate: -10deg;
+    }
+
+    #brandingIcon{
+        width: 300px;
+        height: 300px;
+        margin-bottom: -300px;
+        margin-left: -175px;
+        margin-right: -30px;
+    }
+
+    #brandingIcon ~ .text{
+        margin-top: 65px;
+    }
+
+    #communityIcon{
+        width: 275px;
+        height: 275px;
+        margin-right: -125px;
+        margin-bottom: -275px;
+    }
+
+    #advertisementsIcon{
+        width: 275px;
+        height: 275px;
     }
 
 </style>

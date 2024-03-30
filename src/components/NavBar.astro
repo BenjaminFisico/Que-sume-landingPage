@@ -71,7 +71,7 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
     .irregularForm{
         position:absolute;
         width: 100%;
-        bottom: 110px;
+        bottom: 107px;
     }
 
     svg g{
@@ -87,14 +87,15 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
 
     .navLogo{
         font-family: var(--bodyFont);
-        font-size: 3rem;
+        font-size: 2rem;
+        margin-top: 40px;
         font-weight: 100;
         margin-block-end: 8px;
     }
 
     .navLogo > b{
         font-weight: 900;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     .navLogo::after{
@@ -180,6 +181,16 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
     @keyframes navBarDisplacement {
         0%{ top: 95%; }
         100%{ top: -40px}
+    }
+
+    @media only screen and (min-width: 768px) {
+        .navLogo{
+            font-size: 4rem;
+        }
+
+        .navLogo > b{
+            font-size: 4.5rem;
+        }
     }
 
     @media only screen and (min-width: 1200px) {
