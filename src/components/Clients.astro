@@ -45,6 +45,8 @@ import ClientsShow from "./ClientsShow.astro";
     }
 
     .imageContainer{
+        display: flex;
+        justify-content: center;
         overflow: hidden;
         height: 250px;
         width: 100%;
@@ -53,7 +55,6 @@ import ClientsShow from "./ClientsShow.astro";
     .imageContainer img{
         position: relative;
         bottom: 310px;
-        right: 140px;
         width: 520px;
         opacity: 0.8;
     }
@@ -94,14 +95,25 @@ import ClientsShow from "./ClientsShow.astro";
         margin: 16px 8px;
     }
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: 600px) {
         .imageContainer{
             height: 350px;
         }
 
         .imageContainer img{
             width: 720px;
-            right: 0;
+            right: 35px;
         }
+
+        .logo{
+        width: 250px;
+        height: auto;
+        }
+        
+        .doubleTitle + h3{
+            bottom: 86px;
+            right: 4px;
+        }
+
     }
 </style>

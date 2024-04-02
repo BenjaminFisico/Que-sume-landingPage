@@ -82,6 +82,7 @@ Con el fin de posicionarlas y
         border: 3px solid var(--primaryColor);
         padding: 8px 0 24px 0;
         width: 100%;
+        height: 150px;
         border-radius: 10px;
     }
 
@@ -95,6 +96,23 @@ Con el fin de posicionarlas y
     #presentationVideo{
         width: 0;
         transition: width 500ms ease-in-out;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .videoButton{
+            height: 200px;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .videoButton{
+            height: 300px;
+        }
+
+        .videoButton > img{
+            width: 140px;
+            height: 140px;
+        }
     }
 
 </style>

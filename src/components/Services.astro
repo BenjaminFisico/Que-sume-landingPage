@@ -21,8 +21,8 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             </div>
         </div>
         <div class="service">
-            <div class="text">
-                <h2 class="title servicesText textRight">Community manager</h2>
+            <div class="text communityText">
+                <h2 class="title servicesText">Community manager</h2>
                 <p class="subtitleText servicesText"><mark>Tu tiempo es muy valioso,</mark> nos encargamos de todas tus redes. <mark>¿estas listo para hacer crecer tu marca?</mark></p>
             </div>
             <Image id="communityIcon" class="sectionIcon" src={communityIcon} alt="Community manager Icon" loading="lazy"/>
@@ -32,14 +32,15 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             <Image id="advertisementsIcon" class="sectionIcon" src={advertisementsIcon} alt="Anuncios Icon" loading="lazy"/>
             <div class="text">
                 <h2 class="title servicesText textLeft advertisements">Anuncios</h2>
-                <p class="subtitleText textLeft servicesText">Incrementemos juntos <mark>la visibilidad y el engagement.</mark></p>
+                <p class="doubleP subtitleText textLeft servicesText">Incrementemos juntos <mark>la visibilidad y el engagement.</mark></p>
                 <p class="subtitleText textLeft servicesText">Encontremos la <mark>audiencia adecuada</mark> para llegar a <mark>clientes relevantes.</mark></p>
             </div>
         </div>
         <div class="service">
             <div class="text">
                 <h2 class="title servicesText">Web | E-Commerce</h2>
-                <p class="subtitleText servicesText">La web es tu vidriera en el mundo online, <mark>ideamos el plan perfecto para vos</mark></p>
+                <p class="subtitleText servicesText ">La web es tu vidriera en el mundo online, </p>
+                <p class="subtitleText"><mark>ideamos el plan perfecto para vos</mark></p>
             </div>
             <Image id="ECommerceIcon" class="sectionIcon" src={ECommerceIcon} alt="E-Commerce Icon" loading="lazy"/>
         </div>
@@ -84,10 +85,11 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
 
     .text{
         border-bottom: 5px dashed var(--backgroundColor);
+        padding-bottom: 32px;
     }
 
-    .text p{
-        margin-bottom: 32px;
+    .text > p{
+        margin-bottom: 4px;
     }
 
     .textLeft{
@@ -102,10 +104,6 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
     
     .toRight{
         margin-left: auto;
-    }
-
-    .advertisements{
-        margin-left: 40px;
     }
 
     .sectionIcon{
@@ -156,9 +154,101 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
         margin-bottom: -275px;
     }
 
+    #comunityIcon ~ .text{
+        margin-top: 16px;
+    }
+
+    .communityText{
+        margin-top: 16px;
+    }
+
+    .communityText > h2{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #advertisementsIcon{
         width: 275px;
         height: 275px;
+        margin-left: -120px;
     }
 
+    #advertisementsIcon ~ .text{
+        margin-top: 30px;
+        margin-left: -50px;
+        padding: 8px;
+    }
+
+    #ECommerceIcon{
+        width: 275px;
+        height: 275px;
+        margin-right: -140px;
+    }
+
+    #productiosIcon{
+        width: 200px;
+        height: 200px;
+        margin-left: -85px;
+    }
+
+    #consultancyIcon{
+        width: 325px;
+        height: 325px;
+        margin-right: -103px;
+        margin-left: -60px;
+        margin-bottom: -90px;
+    }
+
+    @media only screen and (min-width: 600px) {
+        #brandingIcon{
+            width: 400px;
+            height: 400px;
+            margin-left: -250px;
+        }
+
+        #brandingIcon ~ .text{
+            margin-top: 85px;
+            margin-left: -10px;
+        }
+
+        #communityIcon{
+            width: 330px;
+            height: 330px;
+            margin-right: -165px;
+        }
+
+        .communityText{
+            margin-top: 32px;
+        }
+
+        #advertisementsIcon{
+           width: 350px;
+           height: 350px;
+        }
+
+        #advertisementsIcon ~ .text{
+            margin-left: -80px;
+            padding: 8px;
+        }
+
+        #ECommerceIcon{
+            width: 350px;
+            height: 350px;
+            margin-right: -175px;
+        }
+
+        #productiosIcon{
+            width: 275px;
+            height: 275px;
+            margin-left: -125px;
+        }
+
+        #consultancyIcon{
+            width: 400px;
+            height: 400px;
+            margin-right: -120px;
+            margin-left: -78px;
+        }
+    }
 </style>

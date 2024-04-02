@@ -193,14 +193,58 @@ import hamburgerIcon from "/src/assets/hamburger_button.svg";
         }
     }
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1000px) {
+        .HeaderContainer{
+            border-width: 15px;
+        }
+
+        .navBarContainer{
+            height: 150px;
+            margin-top: auto;
+            font-size: 2rem;
+            width: -webkit-fill-available;
+        }
+
+        .irregularForm{
+            bottom: 145px;
+        }
+
         .DesktopNav{
             display: block;
+            width: -webkit-fill-available;
+            margin-top: 32px;
+        }
+        .DesktopNav > ul > li{
+            display: flex;
+            margin-top: 20px;
+            height: 80px;
+        }
+
+        .DesktopNav > ul > li > a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            height: -webkit-fill-available;
+        }
+
+        .DesktopNav > ul > li > a:hover{
+            font-size: 3rem;
+            transition: font-size 200ms linear;
+            word-break: keep-all;
         }
 
         .hamburgerButton{
             display: none;
         }
+
+        .navLogo{
+            font-size: 3rem;
+        }
+
+        .navLogo > b{
+            font-size: 3.5rem;
+        }
+
     }
 
 </style>
