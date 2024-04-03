@@ -40,8 +40,8 @@ const { title } = Astro.props;
 		--secondaryColor: #000000;
 		--tertiaryColor: #EFEFEF;
 		--backgroundColor: #FFFFFF;
-		--titleSize: 3rem;
-		--bodySize: 1rem;
+		--titleSize: 48px;
+		--bodySize: 16px;
 		scroll-behavior: smooth;
 	}
 
@@ -75,13 +75,12 @@ const { title } = Astro.props;
         font-family: var(--bodyFont);
         font-size: var(--bodySize);
         margin-block: 0;
-		webkit-margin: 0;
     }
 
 	@media only screen and (min-width: 600px) {
 		:root{
-			--titleSize: 3.5rem;
-			--bodySize: 1.5rem;
+			--titleSize: 56px;
+			--bodySize: 24px;
 		}
 	}
 
