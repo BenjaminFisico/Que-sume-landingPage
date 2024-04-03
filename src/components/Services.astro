@@ -22,8 +22,10 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
         </div>
         <div class="service">
             <div class="text communityText">
-                <h2 class="title servicesText">Community manager</h2>
-                <p class="subtitleText servicesText"><mark>Tu tiempo es muy valioso,</mark> nos encargamos de todas tus redes. <mark>¿estas listo para hacer crecer tu marca?</mark></p>
+                <h2 class="title servicesText">Community</h2>
+                <h2 class="title servicesText">manager</h2>
+                <p class="subtitleText servicesText"><mark>Tu tiempo es muy valioso,</mark> nos encargamos de todas tus redes.</p>
+                <p class="subtitleText servicesText"> <mark>¿estas listo para hacer crecer tu marca?</mark></p>
             </div>
             <Image id="communityIcon" class="sectionIcon" src={communityIcon} alt="Community manager Icon" loading="lazy"/>
         </div>
@@ -37,7 +39,7 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             </div>
         </div>
         <div class="service">
-            <div class="text">
+            <div class="text ecommerceText">
                 <h2 class="title servicesText">Web | E-Commerce</h2>
                 <p class="subtitleText servicesText ">La web es tu vidriera en el mundo online, </p>
                 <p class="subtitleText"><mark>ideamos el plan perfecto para vos</mark></p>
@@ -52,7 +54,7 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             </div>
         </div>
         <div class="service">
-            <div class="text">
+            <div class="text consultancyText">
                 <h2 class="title servicesText textLeft">Consultoria</h2>
                 <p class="subtitleText textLeft servicesText"><mark>Te asesoramos y guiamos para</mark> destrabar eso que “no sabés qué es” y hará <mark>que tu marca despegue.</mark></p>
             </div>
@@ -219,7 +221,7 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
         }
 
         .communityText{
-            margin-top: 32px;
+            margin-top: 48px;
         }
 
         #advertisementsIcon{
@@ -250,5 +252,80 @@ import consultancyIcon from '/src/assets/ownImages/Consultoria_icon.svg';
             margin-right: -120px;
             margin-left: -78px;
         }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .text{
+            width: 50%;
+        }
+
+        #brandingIcon{
+            width: 600px;
+            height: 600px;
+        }
+
+        #brandingIcon ~ .text{
+            margin-top: 150px;
+        }
+
+        .communityText{
+            margin-left: auto;
+        }
+
+        #communityIcon{
+            width: 400px;
+            height: 400px;
+            transform: rotate(-20deg);
+        }
+
+        #advertisementsIcon{
+            width: 500px;
+            height: 500px;
+            margin-left: -200px;
+            margin-bottom: -300px;
+        }
+
+        #advertisementsIcon ~ .text{
+            padding-bottom: 16px;
+            height: fit-content;
+        }
+
+        .ecommerceText{
+            margin-left: auto;
+            height: fit-content;
+        }
+
+        #ECommerceIcon{
+            width: 450px;
+            height: 450px;
+            margin-top: -150px;
+            margin-right: -290px;
+            margin-bottom: -300px;
+        }
+
+        #productiosIcon{
+            width: 450px;
+            height: 450px;
+            margin-left: -230px;
+            margin-bottom: -300px;
+        }
+
+        #productiosIcon ~ .text{
+            height: fit-content;
+        }
+
+        #consultancyIcon{
+            width: 600px;
+            height: 600px;
+            margin-right: -250px;
+            margin-left: -200px;
+            margin-bottom: -200px;
+        }
+
+        .consultancyText{
+            margin-left: auto;
+            height: fit-content;
+        }
+
     }
 </style>

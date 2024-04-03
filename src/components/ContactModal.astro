@@ -2,10 +2,7 @@
 ---
 <div class="contactModal">
     <form id="emailForm">
-        <div class="flex">
-            <button type="button" class="openModal title">Enviar Mensaje</button>
-            <p class="title">🢃</p>
-        </div>
+        <button type="button" class="openModal title">↓↓ Enviar Mensaje ↓↓</button>
         <fieldset>
             <input id="nameInput" type="text" class="simpleInput" required/>
             <label for="nameInput">Nombre</label>
@@ -31,7 +28,7 @@
 </script>
 
 <style>
-     h4, p{
+    h4, p{
         color: var(--backgroundColor);
     }
 
@@ -41,7 +38,6 @@
         border-radius: 20px;
         border-top: 5px solid var(--primaryColor);
         margin-top: -40px;
-        width: 85%;
         height: 55px;
         overflow: hidden;
         transition: height 200ms ease-out, transform 200ms ease-out;
@@ -52,6 +48,7 @@
         width: 100%;
         color: white;
         border: 0;
+        animation: heartbeat 1.5s infinite;
     }
 
    .showModal{
@@ -63,10 +60,6 @@
     .showModal p{
         transition: transform 1s ease-in-out;
         transform: rotate(180deg);
-    }
-
-    .flex{
-        display: flex;
     }
 
     #emailForm{
@@ -123,6 +116,42 @@
         font-family: var(--titleFont);
         font-size: 1.5rem;
         padding: 8px 16px;
+    }
+
+    
+    @keyframes heartbeat {
+        from {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            -webkit-transform-origin: center center;
+                    transform-origin: center center;
+            -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+        }
+        10% {
+            -webkit-transform: scale(0.91);
+                    transform: scale(0.91);
+            -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+        }
+        17% {
+            -webkit-transform: scale(0.98);
+                    transform: scale(0.98);
+            -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+        }
+        33% {
+            -webkit-transform: scale(0.87);
+                    transform: scale(0.87);
+            -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+        }
+        45% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+        }
     }
 
     @media only screen and (min-width: 600px){

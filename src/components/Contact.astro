@@ -8,32 +8,34 @@ import ContactModal from './ContactModal.astro';
 
 <article id="contact">
     <video id="videoCel" src="/src/assets/videos/videoCelular.mp4" autoplay loop muted controls></video>
-    <h3 class="title">contactanos</h3>
-    <p class="subtitleText">¡Es momento de tener tu sitio online!</p>
-    <h4 class="title minTitle">¿ En que podemos ayudarte?</h4>
-    <ul>
-        <li>Diseño</li>
-        <li>Desarrollo</li>
-        <li>Puesta en marcha</li>
-        <li>Fotografia</li>
-        <li>Marketing online</li>
-    </ul>
-    <h4 class="title minTitle">¿ Listo para hacer crecer tu marca?</h4>
-    <p class="contactEmail">info@quesume.com.ar</p>
-    <div class="socialMediaContainer">
-        <a href="https://www.facebook.com/Que-Sume-102645215550641" target="_blank" id="facebook">
-            <Image class="icon" src={facebookIcon} alt="Facebook Icon" loading="lazy"/>
-            <Image class="redirectIcon" src={redirectIcon} alt="Icono de redireccionamiento" loading="lazy"/>
-            <h4 class="title minTitle">Facebook</h4>
-        </a>
-        <a href="https://www.instagram.com/quesumemas/?igshid=ZDYzZTNjNWY%3D" target="_blank" id="instagram">
-            <Image class="redirectIcon" src={redirectIcon} alt="Icono de redireccionamiento" loading="lazy"/>
-            <Image class="icon" src={instagramIcon} alt="Instagram Icon" loading="lazy"/>
-            <h4 class="title minTitle">Instagram</h4>
-        </a>
-    </div>
-    <div class="emailMessageContainer">
-        <ContactModal />
+    <div class="textContactContainer">
+        <h3 class="title">contactanos</h3>
+        <p class="subtitleText">¡Es momento de tener tu sitio online!</p>
+        <h4 class="title minTitle">¿ En que podemos ayudarte?</h4>
+        <ul>
+            <li>Diseño</li>
+            <li>Desarrollo</li>
+            <li>Puesta en marcha</li>
+            <li>Fotografia</li>
+            <li>Marketing online</li>
+        </ul>
+        <h4 class="title minTitle">¿ Listo para hacer crecer tu marca?</h4>
+        <p class="contactEmail">info@quesume.com.ar</p>
+        <div class="socialMediaContainer">
+            <a href="https://www.facebook.com/Que-Sume-102645215550641" target="_blank" id="facebook">
+                <Image class="icon" src={facebookIcon} alt="Facebook Icon" loading="lazy"/>
+                <Image class="redirectIcon" src={redirectIcon} alt="Icono de redireccionamiento" loading="lazy"/>
+                <h4 class="title minTitle">Facebook</h4>
+            </a>
+            <a href="https://www.instagram.com/quesumemas/?igshid=ZDYzZTNjNWY%3D" target="_blank" id="instagram">
+                <Image class="redirectIcon" src={redirectIcon} alt="Icono de redireccionamiento" loading="lazy"/>
+                <Image class="icon" src={instagramIcon} alt="Instagram Icon" loading="lazy"/>
+                <h4 class="title minTitle">Instagram</h4>
+            </a>
+        </div>
+        <div class="emailMessageContainer">
+            <ContactModal />
+        </div>
     </div>
 </article>
 
@@ -112,13 +114,33 @@ import ContactModal from './ContactModal.astro';
     }
 
     .emailMessageContainer{
+        display: flex;
+        justify-content: center;
         margin-top: 96px;
-        margin-right: auto;
+        width: 100%;
+    }
+
+    .textContactContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     @media only screen and (min-width: 600px) {
         #contact{
             padding-bottom: 48px;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        #contact{
+            flex-direction: row-reverse;
+        }
+
+        #videoCel{
+            width: 30%;
+            margin-left: 32px;
         }
     }
 </style>
