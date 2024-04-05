@@ -12,8 +12,10 @@ import ClientsShow from "./ClientsShow.astro";
         </div>
         <div class="contentContainer">
             <Image class="logo" src={logo} alt="Clients Logo" loading="lazy"/>
-            <h3 class="doubleTitle">¿por qué nos eligen?</h3>
-            <h3>¿por qué nos eligen?</h3>
+            <div class="doubleTitleContainer">
+                <h3 class="doubleTitle">¿por qué nos eligen?</h3>
+                <h3>¿por qué nos eligen?</h3>
+            </div>
             <div class="descsContainer">
                 <div class="section">
                     <p>-- Ofrecemos un servicio integral abarcando todos los aspectos necesarios para hacer funcionar cualquier negocio.</p>
@@ -73,16 +75,20 @@ import ClientsShow from "./ClientsShow.astro";
         height: auto;
     }
 
+    .doubleTitleContainer{
+        margin-bottom: 48px;
+    }
+
     .doubleTitle, .doubleTitle + h3{
         font-family: var(--titleFont);
         font-size: var(--titleSize);
         margin-block: 0;
     }
 
-    .doubleTitle + h3{
-        position: relative;
-        bottom: 65px;
-        right: 3px;
+    .doubleTitle{
+        position: absolute;
+        margin-left: -3px;
+        margin-top: -2px;
         color: transparent;
         -webkit-text-stroke: 1px black;
     }
